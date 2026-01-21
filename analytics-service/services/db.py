@@ -1,9 +1,15 @@
 from pymongo import MongoClient
-import os;
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = MongoClient(os.getenv("MONGO_URI"))
+MONGO_URI = os.getenv("MONGO_URI")
+
+client = MongoClient(
+    MONGO_URI,
+    tls=True
+)
+
 db = client.get_database()
 tasks_collection = db.tasks
