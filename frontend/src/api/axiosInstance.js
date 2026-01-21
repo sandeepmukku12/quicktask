@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   // default, can override in individual APIs
-  baseURL: process.env.REACT_APP_AUTH_BASE_URL || "http://localhost:8082",
+  baseURL: process.env.REACT_APP_AUTH_BASE_URL || "http://localhost:8082/api",
   headers: {
     "Content-Type": "application/json",
   },

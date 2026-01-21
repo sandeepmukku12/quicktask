@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-// import TasksPage from "./pages/TasksPage";
+import TasksPage from "./pages/TasksPage";
 // import DashboardPage from "./pages/DashboardPage";
-// import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function AppRoutes() {
   return (
@@ -16,7 +16,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        {/* <Route
+        <Route
           path="/tasks"
           element={
             <ProtectedRoute>
@@ -24,7 +24,7 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
