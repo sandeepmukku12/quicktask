@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import routes from "./routes/index.js";
 
 dotenv.config();
 
@@ -19,6 +20,9 @@ app.get("/api/health", (req, res) => {
     message: "QuickTask API running",
   });
 });
+
+// Routes
+app.use("/api", routes);
 
 // MongoDB connection & server start
 mongoose
