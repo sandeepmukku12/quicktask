@@ -29,7 +29,8 @@ export const register = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({ message: "Registration failed" });
+    console.log(error);
+    res.status(500).json({ message: error || "Registration failed" });
   }
 };
 
