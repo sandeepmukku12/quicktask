@@ -1,6 +1,6 @@
 import axiosInstance from "./axiosInstance";
 
-const TASKS_BASE_URL = REACT_APP_TASKS_BASE_URL || "http://localhost:8082";
+const TASKS_BASE_URL = process.env.REACT_APP_TASKS_BASE_URL || "http://localhost:8082";
 
 export const getTasks = (userId) =>
   axiosInstance.get(`${TASKS_BASE_URL}/tasks?user_id=${userId}`);
