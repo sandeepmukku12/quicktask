@@ -1,11 +1,8 @@
-import axios from "axios";
+import axiosInstance from "./axiosInstance";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL_AUTH || "http://localhost:8082";
+const AUTH_BASE_URL = "http://localhost:8082";
 
-export const register = (data) => {
-    return axios.post(`${BASE_URL}/register`, data);
-};
-
-export const login = (data) => {
-    return axios.post(`${BASE_URL}/login`, data);
-};
+export const register = (data) =>
+  axiosInstance.post(`${AUTH_BASE_URL}/register`, data);
+export const login = (data) =>
+  axiosInstance.post(`${AUTH_BASE_URL}/login`, data);
