@@ -174,9 +174,9 @@ To get started with **QuickTask**, follow these steps:
    - `http://localhost:8000/user-stats?user_id=<id>`
    - `http://localhost:8000/productivity?user_id=<id>&days=7`
 
----
-
 ### ✅ Notes
 
 - After running the frontend, open your browser at [http://localhost:3000](http://localhost:3000) to access the app.  
 - Make sure the backend server is running before using the frontend.
+
+---
