@@ -47,3 +47,11 @@ QuickTask is a personal task management application that allows users to manage 
 | Deployment| Vercel (frontend), Render (backend + analytics) |
 
 ---
+
+## Prerequisites
+
+- **Node.js** >= 18.x  
+- **npm** >= 9.x  
+- **Python** >= 3.9  
+- **MongoDB Atlas** account or local MongoDB instance  
+- **Optional:** Vercel CLI or Render account for deployment
