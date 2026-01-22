@@ -302,4 +302,11 @@ Seeding completed successfully
 
 ---
 
+## ❤️ Built With Love
 
+**StockSync** was built with :heart: by **Sandeep Mukku**  
+It’s designed to help users **organize their tasks**, **track priorities** and **due dates**, and **visualize productivity** through a clean and intuitive dashboard
+
+Thank you for checking out the project! 🙌
+
+---
