@@ -34,3 +34,16 @@ QuickTask is a personal task management application that allows users to manage 
 - **Filter, sort, and search tasks**  
 - **Dashboard with charts** (task completion trends & priority distribution)  
 - **Python analytics microservice** providing user statistics and productivity trends
+
+---
+
+## Technology Stack
+
+| Layer      | Technology                              |
+|-----------|-----------------------------------------|
+| Frontend  | React.js, Tailwind CSS, Recharts, Axios |
+| Backend   | Node.js, Express.js, MongoDB, JWT       |
+| Analytics | Python, FastAPI, PyMongo                |
+| Deployment| Vercel (frontend), Render (backend + analytics) |
+
+---
