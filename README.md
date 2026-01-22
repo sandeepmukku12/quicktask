@@ -249,3 +249,33 @@ To get started with **QuickTask**, follow these steps:
 ```
 
 ---
+
+## Seed Script
+
+### **Purpose:** Add sample tasks and users for testing.
+
+- **Node.js backend script:** `backend/scripts/seed.js`
+
+```bash
+cd backend
+npm run seed
+```
+
+- **Adds:**
+
+  - Multiple tasks with different priority and status  
+  - Example data for testing dashboard charts  
+
+### **Sample Output:**
+
+```php
+Connecting to MongoDB...
+Clearing existing data...
+Creating demo user...
+Creating sample tasks...
+Seeding completed successfully
+```
+
+---
+
+
