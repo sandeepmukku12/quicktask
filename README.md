@@ -122,6 +122,8 @@ To get started with **QuickTask**, follow these steps:
    FRONTEND_URL_PROD=<your_frontend_deployed_url>
    ```
 
+> ✅ **Notes:** You can check the `.env.example` files included in each directories (frontend, backend, analytics-service) for reference
+
 ---
 
 ### ✅ Notes
