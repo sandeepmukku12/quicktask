@@ -33,7 +33,7 @@ export default function LoginPage() {
   };
 
   const handleDemoLogin = () => {
-    setEmail("test@example.com");
+    setEmail("demo@quicktask.com");
     setPassword("password123");
   };
 
