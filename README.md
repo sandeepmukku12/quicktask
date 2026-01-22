@@ -208,3 +208,13 @@ To get started with **QuickTask**, follow these steps:
 | GET    | `/productivity`   | `?user_id=<id>&days=7`              | Get task completion trends over last N days |
 
 ---
+
+## Known Limitations / Assumptions
+
+- Single-user login is supported per account (no multi-organization features yet)  
+- Due date reminders are not implemented (bonus feature)  
+- No export to CSV/PDF in MVP  
+- Analytics service depends on MongoDB timestamps for trends
+
+---
+
