@@ -236,15 +236,15 @@ To get started with **QuickTask**, follow these steps:
 
 ```json
 {
-  _id: ObjectId,
-  userId: ObjectId,
-  title: String,
-  description: String,
-  priority: "Low" | "Medium" | "High",
-  status: "Todo" | "In Progress" | "Completed",
-  dueDate: Date,
-  createdAt: Date,
-  updatedAt: Date
+  "_id": "ObjectId",
+  "userId": "ObjectId",
+  "title": "String",
+  "description": "String",
+  "priority": "Low | Medium | High",
+  "status": "Todo | In Progress | Completed",
+  "dueDate": "Date",
+  "createdAt": "Date",
+  "updatedAt": "Date"
 }
 ```
 
