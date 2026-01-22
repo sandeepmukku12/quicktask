@@ -55,3 +55,77 @@ QuickTask is a personal task management application that allows users to manage 
 - **Python** >= 3.9  
 - **MongoDB Atlas** account or local MongoDB instance  
 - **Optional:** Vercel CLI or Render account for deployment
+
+---
+
+## Installation & Setup
+
+To get started with **QuickTask**, follow these steps:
+
+### 1. Clone the repository
+
+   ```bash
+   git clone https://github.com/sandeepmukku12/quicktask.git
+   cd quicktask
+   ```
+
+### 2. Backend Setup
+   
+   Navigate to the backend directory and install dependencies:
+
+   ```bash
+   cd backend
+   npm install
+   ```
+   Create a `.env` file in the `backend` directory:
+
+   ```env
+   PORT=8082
+   MONGO_URI=<your_mongodb_uri>
+   JWT_SECRET=<your_jwt_secret>
+   FRONTEND_URL_DEV=http://localhost:3000
+   FRONTEND_URL_PROD=<your_frontend_deployed_url>
+   ```
+
+### 3. Frontend Setup
+
+   Navigate to the frontend directory and install dependencies:
+
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+   Create a `.env` file in the `frontend` directory:
+
+   ```env
+   REACT_APP_AUTH_BASE_URL=http://localhost:8082/api
+   REACT_APP_TASKS_BASE_URL=http://localhost:8082/api
+   REACT_APP_ANALYTICS_BASE_URL=http://localhost:8000
+   ```
+
+### 4. Analytics Service Setup
+
+   Navigate to the analytics-service directory:
+
+   ```bash
+   cd ../analytics-service
+   python3 -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   venv\Scripts\activate     # Windows
+   pip install -r requirements.txt
+   ```
+   Create a `.env` file in the `analytics-service` directory:
+
+   ```env
+   PORT=8000
+   MONGO_URI=<your_mongodb_uri>
+   FRONTEND_URL_DEV=http://localhost:3000
+   FRONTEND_URL_PROD=<your_frontend_deployed_url>
+   ```
+
+---
+
+### ✅ Notes
+
+- After running the frontend, open your browser at [http://localhost:3000](http://localhost:3000) to access the app.  
+- Make sure the backend server is running before using the frontend.
