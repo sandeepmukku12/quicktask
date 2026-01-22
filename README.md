@@ -147,29 +147,29 @@ To get started with **QuickTask**, follow these steps:
 
 ### Python Analytics Service
 
-   - ** Linux/macOS **:
+- **Linux/macOS**:
 
-    ```bash
-     cd analytics-service
-     source venv/bin/activate  # Linux/macOS
-     uvicorn app:app --reload --host 0.0.0.0 --port 8000
-    ```
+      ```bash
+         cd analytics-service
+         source venv/bin/activate  # Linux/macOS
+         uvicorn app:app --reload --host 0.0.0.0 --port 8000
+       ```
    
-   - ** Windows (Command Prompt) **:
+- **Windows (Command Prompt)**:
 
-    ```bash
-     cd analytics-service
-     venv\Scripts\activate
-     uvicorn app:app --reload --host 0.0.0.0 --port 8000
-    ```
+       ```bash
+       cd analytics-service
+       venv\Scripts\activate
+       uvicorn app:app --reload --host 0.0.0.0 --port 8000
+       ```
 
-   - ** Windows (PowerShell) **:
+- **Windows (PowerShell)**:
 
-    ```bash
-     cd analytics-service
-     .\venv\Scripts\Activate.ps1
-     uvicorn app:app --reload --host 0.0.0.0 --port 8000
-    ```
+       ```bash
+       cd analytics-service
+       .\venv\Scripts\Activate.ps1
+       uvicorn app:app --reload --host 0.0.0.0 --port 8000
+       ```
 > Once running, endpoints are available at:
    - `http://localhost:8000/user-stats?user_id=<id>`
    - `http://localhost:8000/productivity?user_id=<id>&days=7`
