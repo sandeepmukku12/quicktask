@@ -180,3 +180,31 @@ To get started with **QuickTask**, follow these steps:
 - Make sure the backend server is running before using the frontend.
 
 ---
+
+## API Endpoint Documentation
+
+### User Authentication
+
+| Method | Endpoint           | Body / Params         | Description               |
+|--------|------------------|---------------------|---------------------------|
+| POST   | `/api/auth/register` | `{ email, password }` | Register a new user       |
+| POST   | `/api/auth/login`    | `{ email, password }` | Login and receive JWT     |
+| GET    | `/api/auth/logout`   | —                   | Logout user              |
+
+### Tasks
+
+| Method | Endpoint             | Body / Params                                         | Description                     |
+|--------|---------------------|------------------------------------------------------|---------------------------------|
+| POST   | `/api/tasks`         | `{ title, description, priority, status, dueDate }` | Create task                     |
+| GET    | `/api/tasks`         | `?status=&priority=&search=&sortBy=`               | Get all tasks with search and filters      |
+| PUT    | `/api/tasks/:id`     | `{ title?, description?, priority?, status?, dueDate? }` | Update task                 |
+| DELETE | `/api/tasks/:id`     | —                                                    | Delete task                     |
+
+### Analytics (Python Service)
+
+| Method | Endpoint           | Query Params                        | Description                               |
+|--------|------------------|------------------------------------|-------------------------------------------|
+| GET    | `/user-stats`     | `?user_id=<id>`                     | Get total, completed, pending tasks       |
+| GET    | `/productivity`   | `?user_id=<id>&days=7`              | Get task completion trends over last N days |
+
+---
