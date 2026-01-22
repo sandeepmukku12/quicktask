@@ -130,46 +130,46 @@ To get started with **QuickTask**, follow these steps:
 
 ### Backend
 
-    ```bash
+   ```bash
      cd backend
      npm run dev     # for development with nodemon
      npm start       # for production
-    ```
+   ```
 - **Health check:** GET http://localhost:8082/api/health
 
 ### Frontend
 
-    ```bash
+   ```bash
      cd frontend
      npm start       # development mode
      npm run build   # production build
-    ```
+   ```
 
 ### Python Analytics Service
 
 - **Linux/macOS**:
 
-      ```bash
-         cd analytics-service
-         source venv/bin/activate  # Linux/macOS
-         uvicorn app:app --reload --host 0.0.0.0 --port 8000
-       ```
+    ```bash
+       cd analytics-service
+       source venv/bin/activate  # Linux/macOS
+       uvicorn app:app --reload --host 0.0.0.0 --port 8000
+    ```
    
 - **Windows (Command Prompt)**:
 
-       ```bash
+    ```bash
        cd analytics-service
        venv\Scripts\activate
        uvicorn app:app --reload --host 0.0.0.0 --port 8000
-       ```
+    ```
 
 - **Windows (PowerShell)**:
 
-       ```bash
+    ```bash
        cd analytics-service
        .\venv\Scripts\Activate.ps1
        uvicorn app:app --reload --host 0.0.0.0 --port 8000
-       ```
+    ```
 > Once running, endpoints are available at:
    - `http://localhost:8000/user-stats?user_id=<id>`
    - `http://localhost:8000/productivity?user_id=<id>&days=7`
