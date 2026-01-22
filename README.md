@@ -5,6 +5,12 @@ register and log in, create and manage tasks with priorities and statuses, and v
 
 ---
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)
+![Author](https://img.shields.io/badge/Author-Sandeep%20Mukku-orange.svg)
+
+---
+
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Technology Stack](#technology-stack)
@@ -310,7 +316,7 @@ This project is licensed under the **MIT License**. See the LICENSE file for mor
 
 ## ❤️ Built With Love
 
-**StockSync** was built with :heart: by **Sandeep Mukku**  
+**QuickTask** was built with :heart: by **Sandeep Mukku**  
 It’s designed to help users **organize their tasks**, **track priorities** and **due dates**, and **visualize productivity** through a clean and intuitive dashboard
 
 Thank you for checking out the project! 🙌
