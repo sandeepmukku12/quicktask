@@ -1,23 +1,47 @@
-import React from "react";
-
 export default function TaskCard({ task, onEdit, onDelete }) {
-  const priorityColors = { Low: "bg-green-200 text-green-800", Medium: "bg-yellow-200 text-yellow-800", High: "bg-red-200 text-red-800" };
-  const statusColors = { Todo: "bg-gray-200 text-gray-800", "In Progress": "bg-blue-200 text-blue-800", Completed: "bg-green-300 text-green-900" };
+  const priorityColors = { 
+    Low: "bg-emerald-100 text-emerald-700", 
+    Medium: "bg-amber-100 text-amber-700", 
+    High: "bg-rose-100 text-rose-700" 
+  };
+  const statusColors = { 
+    Todo: "bg-slate-100 text-slate-600", 
+    "In Progress": "bg-indigo-100 text-indigo-700", 
+    Completed: "bg-green-100 text-green-700" 
+  };
 
   return (
-    <div className="border rounded-md p-4 mb-3 shadow-sm flex justify-between items-start bg-white">
-      <div>
-        <h3 className="font-semibold text-lg">{task.title}</h3>
-        <p className="text-gray-600 mt-1">{task.description}</p>
-        <div className="flex gap-2 mt-2">
-          <span className={`px-2 py-1 rounded-full text-sm ${priorityColors[task.priority]}`}>{task.priority}</span>
-          <span className={`px-2 py-1 rounded-full text-sm ${statusColors[task.status]}`}>{task.status}</span>
+    <div className="p-5 flex flex-col sm:flex-row justify-between items-start gap-4 bg-white">
+      <div className="flex-1 min-w-0">
+        <h3 className="font-bold text-gray-800 text-lg truncate">{task.title}</h3>
+        <p className="text-gray-500 mt-1 text-sm line-clamp-2">{task.description}</p>
+        
+        <div className="flex flex-wrap gap-2 mt-3">
+          <span className={`px-2.5 py-0.5 rounded-lg text-xs font-semibold ${priorityColors[task.priority]}`}>
+            {task.priority}
+          </span>
+          <span className={`px-2.5 py-0.5 rounded-lg text-xs font-semibold ${statusColors[task.status]}`}>
+            {task.status}
+          </span>
+          <span className="text-gray-400 text-xs mt-0.5 ml-1">
+            Due: {new Date(task.dueDate).toLocaleDateString()}
+          </span>
         </div>
-        <p className="text-gray-500 mt-1 text-sm">Due: {new Date(task.dueDate).toLocaleDateString()}</p>
       </div>
-      <div className="flex flex-col gap-2">
-        <button onClick={() => onEdit(task)} className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors text-sm">Edit</button>
-        <button onClick={() => onDelete(task._id)} className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-sm">Delete</button>
+
+      <div className="flex sm:flex-col gap-2 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-50">
+        <button 
+          onClick={() => onEdit(task)} 
+          className="flex-1 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-xl hover:bg-indigo-100 transition-all text-xs font-bold"
+        >
+          Edit
+        </button>
+        <button 
+          onClick={() => onDelete(task._id)} 
+          className="flex-1 px-4 py-2 bg-rose-50 text-rose-600 rounded-xl hover:bg-rose-100 transition-all text-xs font-bold"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

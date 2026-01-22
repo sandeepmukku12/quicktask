@@ -12,19 +12,23 @@ export default function TasksPage() {
   const [showForm, setShowForm] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
 
-  // Stable fetchTasks function
-  const fetchTasks = useCallback(async (filters = {}) => {
-    if (!user) return;
-    try {
-      const res = await getTasks(user._id, filters);
-      setTasks(res.data);
-    } catch {
-      toast.error("Failed to fetch tasks");
-    }
-  }, [user]);
+  const userId = user?.user?.id || user?._id;
+
+  const fetchTasks = useCallback(
+    async (filters = {}) => {
+      if (!userId) return;
+      try {
+        const res = await getTasks(userId, filters);
+        setTasks(res.data);
+      } catch {
+        toast.error("Failed to fetch tasks");
+      }
+    },
+    [userId],
+  );
 
   useEffect(() => {
-    fetchTasks(); // initial fetch on mount
+    fetchTasks();
   }, [fetchTasks]);
 
   const handleAddEdit = async (taskData) => {
@@ -33,12 +37,12 @@ export default function TasksPage() {
         await updateTask(editingTask._id, taskData);
         toast.success("Task updated");
       } else {
-        await createTask({ ...taskData, userId: user._id });
+        await createTask({ ...taskData, userId });
         toast.success("Task created");
       }
       setShowForm(false);
       setEditingTask(null);
-      fetchTasks(); // refresh tasks after add/edit
+      fetchTasks();
     } catch {
       toast.error("Failed to save task");
     }
@@ -60,27 +64,75 @@ export default function TasksPage() {
     setShowForm(true);
   };
 
-  // Memoized filter handler
-  const handleFilter = useCallback((filters) => {
-    fetchTasks(filters);
-  }, [fetchTasks]);
+  const handleFilter = useCallback(
+    (filters) => {
+      fetchTasks(filters);
+    },
+    [fetchTasks],
+  );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-semibold">My Tasks</h1>
-          <button onClick={() => setShowForm(true)} className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">+ Add Task</button>
+    <div className="min-h-screen bg-gray-100 p-4 md:p-8 overflow-x-hidden">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-800">My Tasks</h1>
+            <p className="text-gray-500">
+              Manage and track your daily progress
+            </p>
+          </div>
+          <button
+            onClick={() => setShowForm(true)}
+            className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-medium shadow-sm hover:bg-indigo-700 transition-all active:scale-95"
+          >
+            + Add Task
+          </button>
+        </header>
+
+        {/* Filter Section */}
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 mb-8">
+          <TaskFilter onFilter={handleFilter} />
         </div>
 
-        <TaskFilter onFilter={handleFilter} />
-
-        {tasks.length ? tasks.map((task) => (
-          <TaskCard key={task._id} task={task} onEdit={handleEdit} onDelete={handleDelete} />
-        )) : <p className="text-gray-600 text-center mt-6">No tasks found</p>}
+        {/* Task List Grid */}
+        <div className="space-y-4">
+          {tasks.length ? (
+            <div className="grid grid-cols-1 gap-4">
+              {tasks.map((task) => (
+                <div
+                  key={task._id}
+                  className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:border-indigo-300 transition-colors"
+                >
+                  <TaskCard
+                    task={task}
+                    onEdit={handleEdit}
+                    onDelete={handleDelete}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-xl p-12 text-center border border-dashed border-gray-300">
+              <p className="text-gray-500">
+                No tasks found. Time to add something new!
+              </p>
+            </div>
+          )}
+        </div>
       </div>
 
-      {showForm && <TaskForm task={editingTask} onSubmit={handleAddEdit} onClose={() => { setShowForm(false); setEditingTask(null); }} />}
+      {/* Modal - TaskForm */}
+      {showForm && (
+        <TaskForm
+          task={editingTask}
+          onSubmit={handleAddEdit}
+          onClose={() => {
+            setShowForm(false);
+            setEditingTask(null);
+          }}
+        />
+      )}
     </div>
   );
 }
