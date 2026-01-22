@@ -218,3 +218,34 @@ To get started with **QuickTask**, follow these steps:
 
 ---
 
+## MongoDB Schema Design
+
+### User Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "email": "String",
+  "password": "String (hashed)",
+  "createdAt": "Date",
+  "updatedAt": "Date"
+}
+```
+
+### Task Collection
+
+```json
+{
+  _id: ObjectId,
+  userId: ObjectId,
+  title: String,
+  description: String,
+  priority: "Low" | "Medium" | "High",
+  status: "Todo" | "In Progress" | "Completed",
+  dueDate: Date,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+---
