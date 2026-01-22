@@ -1,15 +1,23 @@
+import os
 from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from services.task_analytics import user_stats, productivity_trends
 
 app = FastAPI(title="QuickTask Analytics Service")
 
+origins = [
+    os.getenv("FRONTEND_URL_DEV") or "http://localhost:3000",
+    os.getenv("FRONTEND_URL_PROD"),
+]
+
+
 # Allow CORS from frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # adjust in production
-    allow_methods=["*"],
-    allow_headers=["*"]
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],   # GET, POST, PUT, DELETE
+    allow_headers=["*"],
 )
 
 @app.get("/user-stats")
