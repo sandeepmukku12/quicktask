@@ -22,3 +22,15 @@ register and log in, create and manage tasks with priorities and statuses, and v
 11. [Seed Script](#seed-script)
 
 ---
+
+## Project Overview
+
+QuickTask is a personal task management application that allows users to manage their daily tasks efficiently and track productivity. It includes a dashboard with analytics, task management features, and a separate analytics microservice for insights.
+
+### Key Features
+
+- **Secure user authentication with JWT**  
+- **Task CRUD operations** (Create, Read, Update, Delete)  
+- **Filter, sort, and search tasks**  
+- **Dashboard with charts** (task completion trends & priority distribution)  
+- **Python analytics microservice** providing user statistics and productivity trends
