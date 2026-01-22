@@ -10,16 +10,15 @@ register and log in, create and manage tasks with priorities and statuses, and v
 2. [Technology Stack](#technology-stack)
 3. [Prerequisites](#prerequisites)
 4. [Installation & Setup](#installation--setup)
-5. [Environment Variables](#environment-variables)
-6. [Running the Application](#running-the-application)
+5. [Running the Application](#running-the-application)
     - [Backend](#backend)
     - [Frontend](#frontend)
     - [Python Analytics Service](#python-analytics-service)
-7. [API Endpoint Documentation](#api-endpoint-documentation)
-8. [Screenshots](#screenshots)
-9. [Known Limitations / Assumptions](#known-limitations--assumptions)
-10. [MongoDB Schema Design](#mongodb-schema-design)
-11. [Seed Script](#seed-script)
+6. [API Endpoint Documentation](#api-endpoint-documentation)
+7. [Screenshots](#screenshots)
+8. [Known Limitations / Assumptions](#known-limitations--assumptions)
+9. [MongoDB Schema Design](#mongodb-schema-design)
+10. [Seed Script](#seed-script)
 
 ---
 
