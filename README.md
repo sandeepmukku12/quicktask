@@ -209,6 +209,30 @@ To get started with **QuickTask**, follow these steps:
 
 ---
 
+## Screenshots
+
+### Tasks Page
+<div align="center">
+  <img alt="Tasks Page" src="./screenshots/tasks-page.jpg" width="700"/>
+</div>
+
+### Dashboard Analytics Overview
+<div align="center">
+  <img alt="Dashboard Analytics Overview" src="./screenshots/dashboard-analytics-overview.jpg" width="700"/>
+</div>
+
+### Login Page
+<div align="center">
+  <img alt="Login Page" src="./screenshots/login.jpg" width="700"/>
+</div>
+
+### Register Page
+<div align="center">
+  <img alt="Register Page" src="./screenshots/register.jpg" width="700"/>
+</div>
+
+---
+
 ## Known Limitations / Assumptions
 
 - Single-user login is supported per account (no multi-organization features yet)  
